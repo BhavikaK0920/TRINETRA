@@ -1,0 +1,807 @@
+# TRINETRA — COMPLETE FULL-STACK WEBSITE DEVELOPMENT PROMPT
+
+## “See the Signs. Protect the Silent.”
+
+### ROLE AND MISSION
+
+Act as a senior full-stack developer, AI engineer, UI/UX designer, database architect, cybersecurity specialist, accessibility expert, and hackathon product strategist.
+
+Build a complete, responsive, functional web application named **TRINETRA**, a privacy-conscious women's safety platform designed for India.
+
+TRINETRA combines confidential reporting, workplace harassment reporting, AI-assisted safety pattern detection, accountable case tracking, multilingual AI chat assistance, and voice accessibility in one integrated platform.
+
+This must be a real working MVP, NOT merely a landing page, static design, prototype screenshot, or collection of non-functional buttons.
+
+Build the frontend, backend, database, authentication, role-based access control, forms, dashboards, analytics, chatbot, voice assistant, multilingual interface, and complete demonstration workflow.
+
+**Development priority:** Functional features first, excellent UI/UX second, optional advanced integrations third. Start building immediately. Do not stop after generating the homepage or ask unnecessary questions.
+
+---
+
+# 1. BRAND IDENTITY
+
+**Brand:** TRINETRA
+
+**Tagline:** See the Signs. Protect the Silent.
+
+**AI assistant:** TRINETRA SAATHI
+
+**Assistant tagline:** Your Language. Your Voice. Your Safety.
+
+Brand concept:
+- LISTEN — make it easier to communicate concerns.
+- DETECT — identify potential recurring safety patterns.
+- PROTECT — support responsible review, case tracking, and access to resources.
+
+The platform must communicate trust, courage, intelligence, privacy, accessibility, and accountability.
+
+Create a distinctive, modern logo using an original geometric three-eye-inspired symbol. It should look like a serious AI safety technology brand, not a generic NGO, beauty, wellness, or government website.
+
+If no logo file is available, create a clean SVG logo and a simplified favicon.
+
+## Design system
+
+Use a premium, technology-driven visual identity:
+
+- Midnight navy and near-black as primary colours.
+- Electric violet and teal as accent colours.
+- White and soft silver for text.
+- Restrained crimson for urgent safety alerts.
+- Inter or Manrope typography.
+- Subtle gradients, tasteful glows, refined shadows, soft borders, and rounded cards.
+- Elegant charts, clean layouts, smooth transitions, and consistent icons.
+- Accessible contrast, keyboard navigation, visible focus indicators, and screen-reader labels.
+
+The landing page should feel like a polished AI startup. The reporting and case-management dashboards should feel like a trustworthy professional platform.
+
+Build a fully responsive experience for desktop, tablet, and mobile. On mobile, make reporting, language switching, and voice interaction easy to access.
+
+Avoid excessive animation, clutter, generic templates, fake statistics, fake testimonials, and decorative elements that reduce usability.
+
+---
+
+# 2. TECHNOLOGY STACK
+
+Use the following stack where supported by the development environment:
+
+- Frontend: React, TypeScript, and Vite.
+- Styling: Tailwind CSS with reusable design tokens and components.
+- Icons: Lucide React.
+- Routing: React Router.
+- Charts: Recharts.
+- Backend and database: Firebase Authentication, Cloud Firestore, Firebase Storage, and Cloud Functions where appropriate.
+- AI assistant: a supported AI API accessed securely through the backend.
+- Internationalisation: a central translation framework such as i18next.
+- Voice input/output: browser speech APIs with capability detection and an extensible speech-service adapter.
+
+Build a modular architecture with reusable components, service layers, environment configuration, and maintainable code.
+
+If credentials are unavailable, implement a clearly labelled DEMO MODE using synthetic data and local persistence or a dedicated mock service. Make the demo functional without API keys.
+
+Do not expose API keys in frontend code. Do not claim a real backend integration exists if the application is using mock data.
+
+Create a README containing installation instructions, environment variables, backend setup, database configuration, testing, and deployment steps.
+
+---
+
+# 3. COMPLETE WEBSITE STRUCTURE
+
+Build the following pages and modules.
+
+## A. Public landing page
+
+Create a visually striking homepage with:
+
+1. A responsive navbar containing the logo, Home, Features, How It Works, Resources, Language Selector, Sign In, and Report a Concern.
+2. A hero section with the heading:
+
+   **“Silence Should Never Be the Only Option.”**
+
+3. Supporting text:
+
+   “A privacy-conscious platform to share concerns, recognise potential safety patterns, and track responsible follow-up — in a language you understand.”
+
+4. Primary CTA: “Report a Concern”.
+5. Secondary CTA: “Talk to TRINETRA Saathi”.
+6. An elegant visual representing Listen, Detect, and Protect.
+7. Four feature cards: SafeReach, SpeakUp, PatternWatch, and TrustTrack.
+8. A multilingual accessibility section.
+9. A simple three-step workflow: Report Safely → Review Patterns → Track Follow-up.
+10. A privacy and responsible-use section.
+11. An emergency support section with verified Indian resources.
+12. A footer containing About, Privacy, Safety Resources, Terms, and Contact.
+
+## B. Authentication and roles
+
+Implement sign-up, sign-in, sign-out, password recovery, session handling, and protected routes.
+
+Support these roles:
+
+- Reporter.
+- Reviewer.
+- Administrator.
+
+Enforce permissions in the backend and database rules, not just the frontend.
+
+Allow general assistant questions without login. Allow anonymous reporting only through an appropriate workflow that does not require an identity.
+
+Provide clearly labelled demo accounts or demo-role switching for judges when real authentication credentials are unavailable.
+
+## C. Reporter dashboard
+
+Include:
+
+- Create a new report.
+- My eligible case references.
+- Case status and timeline.
+- Follow-up requests.
+- Safety resources.
+- Language and accessibility preferences.
+- Assistant access.
+- A quick-exit control that navigates to a neutral page.
+
+Clearly explain that quick exit does not erase browser history or guarantee privacy on a monitored device.
+
+---
+
+# 4. FEATURE ONE — SAFEREACH
+
+## Domestic abuse and personal safety reporting
+
+Create a sensitive reporting workflow for domestic abuse, threats, coercive behaviour, stalking, intimidation, and other unsafe situations.
+
+### Reporting form
+
+Include:
+
+- Concern category.
+- Incident description.
+- Approximate date and time, optional.
+- Approximate location, optional.
+- Whether the concern is ongoing or immediately dangerous.
+- Optional supporting evidence.
+- Preferred safe follow-up method, optional.
+- Anonymous or confidential reporting choice.
+- Consent and privacy explanation.
+
+Do not force a name, phone number, or exact address for an anonymous report.
+
+Clearly explain the difference between anonymous and confidential reporting.
+
+### Safety features
+
+- Use approximate location by default.
+- Do not collect precise GPS unless necessary and explicitly consented to.
+- Provide a review screen before submission.
+- Generate a private case reference when a report is successfully saved.
+- Do not expose reporter identities in public dashboards.
+- Do not automatically notify family members, employers, or other potentially unsafe contacts.
+- Avoid sending email or SMS notifications that could expose a survivor.
+- Provide safe-device guidance where relevant.
+- Make it possible to skip optional sensitive questions.
+
+For immediate danger in India, display the emergency number 112 and Women Helpline 181, with a reminder to verify local availability.
+
+Do not claim that submitting a report automatically contacts police or guarantees intervention. Show actual routing status only when a real integration exists.
+
+---
+
+# 5. FEATURE TWO — SPEAKUP
+
+## Workplace harassment reporting and POSH guidance
+
+Build a workplace safety module for sexual harassment, inappropriate conduct, bullying, retaliation, and other workplace safety concerns.
+
+### Reporting workflow
+
+Collect:
+
+- Concern category.
+- Organisation or workplace, optional where appropriate.
+- Approximate incident date.
+- Incident description.
+- Optional evidence.
+- Informal concern or confidential formal complaint selection.
+- Safe follow-up preference.
+
+Clearly explain that an anonymous concern report is not necessarily a valid formal complaint under India's POSH framework. Formal inquiries must follow the applicable legal process, and anonymity may limit investigation and follow-up.
+
+Do not claim that a TRINETRA submission automatically files a legal complaint or starts a formal POSH inquiry.
+
+### Case management
+
+Show:
+
+- Case reference.
+- Submission date.
+- Status.
+- Assigned reviewer, visible only to authorised roles.
+- Case timeline.
+- Requests for additional information.
+- Follow-up deadlines where configured.
+- Secure communication for eligible confidential cases.
+- Retaliation concern reporting.
+
+Use these statuses:
+
+Submitted → Under Review → More Information Requested → Action Planned → Resolved or Closed.
+
+Authorised reviewers can update statuses and record timestamped actions.
+
+Restrict complainant identities, evidence, and private notes to authorised users.
+
+---
+
+# 6. FEATURE THREE — PATTERNWATCH
+
+## Explainable AI-assisted safety pattern detection
+
+Build a polished dashboard that identifies potential recurring patterns across reports without exposing individual reporters.
+
+This is a key differentiating feature of TRINETRA.
+
+### Dashboard
+
+Display:
+
+- Report counts by concern category.
+- Trends over time.
+- Reports by broad time window.
+- Aggregated regional patterns where safe.
+- Similar behaviour categories.
+- Potential duplicate reports.
+- Emerging pattern candidates.
+- Confidence or match-strength indicators.
+- Cases requiring human review.
+
+Use Recharts for clear, responsive charts.
+
+Only show location visualisations when suitable data is available and privacy thresholds are met. Otherwise, show aggregated regional charts.
+
+### Detection logic
+
+Implement a working, explainable baseline algorithm that groups synthetic or authorised reports using:
+
+- Similar categories.
+- Broad geographic regions.
+- Time-window overlap.
+- Similar behaviour labels or text features where supported.
+
+For each candidate, display:
+
+- Pattern reference.
+- Number of related reports.
+- Relevant time window.
+- Broad location if safe.
+- Matching factors.
+- Transparent confidence or match-strength indicator.
+- Possible duplicate flag.
+- Recommended review action.
+
+Include an “Explain This Pattern” panel that states exactly which factors contributed to the match.
+
+Example:
+
+“Several sample reports share a similar category and time window. Human review is recommended to determine whether these reports are related.”
+
+### Safety constraints
+
+- A detected pattern is not proof of misconduct.
+- Never publicly name or rank alleged offenders.
+- Never expose reporters' identities or raw sensitive descriptions in aggregate analytics.
+- Apply minimum group-size thresholds before showing sensitive location-based aggregates.
+- Flag uncertain matches for human review.
+- Allow authorised reviewers to dismiss false matches with a reason.
+- Clearly label synthetic demo data.
+- If no AI API is configured, use actual rule-based matching and label it “Rule-based demo analysis.”
+
+Do not present hard-coded example conclusions as genuine AI analysis.
+
+---
+
+# 7. FEATURE FOUR — TRUSTTRACK
+
+## Secure case tracking and accountable history
+
+Create an interactive timeline for authorised cases showing:
+
+- Case reference.
+- Current status.
+- Submission timestamp.
+- Review activity.
+- Requests for more information.
+- Recorded actions.
+- Follow-up deadlines.
+- Resolution summary where authorised.
+- Next steps.
+
+### Tamper-evident audit log
+
+Where supported by the backend, implement server-generated, hash-linked audit events.
+
+Each event should contain:
+
+- Case reference.
+- Event type.
+- Timestamp.
+- Authorised actor identifier.
+- Previous event hash.
+- Current event hash.
+
+Use SHA-256 over a canonical event representation and the previous event hash.
+
+Prevent ordinary users from modifying or deleting audit events. Verify the hash chain when the authorised user opens the audit history.
+
+Do not expose private report content, contact information, or evidence through public audit records.
+
+If append-only storage cannot be guaranteed in the MVP, label it “Tamper-evident demo log.” Do not claim to use blockchain or guarantee absolute tamper-proofing.
+
+---
+
+# 8. TRINETRA SAATHI — MULTILINGUAL AI CHATBOT
+
+## “Your Language. Your Voice. Your Safety.”
+
+Build a working AI chat assistant integrated throughout the website.
+
+The assistant should be accessible through a floating button on every major page.
+
+### Chat interface
+
+Include:
+
+- TRINETRA SAATHI identity.
+- Language selector.
+- Conversation panel.
+- Message input.
+- Send button.
+- Microphone button.
+- Play/read-aloud button.
+- Pause and stop controls where supported.
+- Clear-conversation option.
+- Suggested questions.
+- Typing indicator.
+- Helpful errors and loading states.
+
+Suggested greeting:
+
+“Hello. I’m TRINETRA Saathi. You can ask questions in your preferred language. I can explain reporting options, help you navigate TRINETRA, and show you support resources. You do not need to share your name to ask a general question.”
+
+Suggested question chips:
+
+- “I need help understanding my options.”
+- “How can I report domestic abuse?”
+- “How do I report workplace harassment?”
+- “What does anonymous reporting mean?”
+- “Help me understand my case status.”
+- “Find support resources.”
+- “Explain this in my language.”
+
+### Context-aware assistance
+
+When the user is on SafeReach, explain domestic safety reporting and privacy options.
+
+When the user is on SpeakUp, explain workplace reporting, basic POSH information, and anonymous versus formal complaints.
+
+When the user is on PatternWatch, explain pattern candidates, matching factors, and uncertainty.
+
+When the user is on TrustTrack, explain case references, status meanings, and timelines.
+
+When the user is on the homepage, explain TRINETRA and guide the user to relevant features.
+
+Use only limited, non-sensitive page context. Never automatically send the user's report text, evidence, identity, or private case history to the assistant.
+
+### AI implementation
+
+Create a secure server-side assistant service that:
+
+- Receives a message and selected language.
+- Uses a configured AI provider where available.
+- Generates clear responses in the requested supported language.
+- Uses a maintained resource directory for emergency and support information.
+- Avoids inventing phone numbers, legal requirements, case updates, or integrations.
+- Handles unsupported languages and service failures.
+- Keeps API keys on the server.
+
+If no AI credentials are available, implement a clearly labelled demo assistant with meaningful predefined answers and a service abstraction ready for integration.
+
+Never pretend to have contacted police, submitted a complaint, contacted an employer, or changed a case unless the corresponding backend operation genuinely succeeded.
+
+---
+
+# 9. MULTILINGUAL WEBSITE — INDIAN REGIONAL LANGUAGES
+
+## Language accessibility is a core feature, not an optional extra.
+
+Provide a language selector in the main navigation, reporting forms, and assistant.
+
+Design the platform to support:
+
+1. English
+2. ಕನ್ನಡ — Kannada
+3. हिन्दी — Hindi
+4. తెలుగు — Telugu
+5. தமிழ் — Tamil
+6. മലയാളം — Malayalam
+7. मराठी — Marathi
+8. বাংলা — Bengali
+9. ગુજરાતી — Gujarati
+10. ਪੰਜਾਬੀ — Punjabi
+11. ଓଡ଼ିଆ — Odia
+12. اردو — Urdu
+13. অসমীয়া — Assamese
+14. संस्कृत — Sanskrit, where appropriate translations are available.
+
+### Website-wide translation
+
+Use a central internationalisation framework and translation dictionaries.
+
+Translate:
+
+- Navigation.
+- Headings.
+- Buttons.
+- Form labels.
+- Validation errors.
+- Instructions.
+- Privacy notices.
+- Safety messages.
+- Dashboard labels.
+- Case statuses.
+- Resource information.
+- Chat interface.
+- Assistant responses where supported.
+
+Changing the language must update the interface immediately and persist across page navigation.
+
+Provide an easy way to switch back to English.
+
+Use native-language names in the language selector. Ensure correct Unicode rendering, suitable fonts, responsive layouts, and right-to-left support for Urdu.
+
+### Translation integrity
+
+Do not claim all languages are fully supported unless tested.
+
+Maintain separate capability indicators for:
+
+- Website translation.
+- AI response generation.
+- Speech recognition.
+- Speech synthesis.
+
+Use reviewed translations for critical emergency and legal content. If a translation is unavailable, display a clear fallback rather than misleading text.
+
+Prioritise a thoroughly tested English, Kannada, Hindi, Tamil, and Telugu experience for the initial demo, while architecting the application to support all listed languages.
+
+Do not fake complete translation coverage using the same English text under different language labels.
+
+---
+
+# 10. VOICE ASSISTANCE
+
+Implement voice input and spoken answers in TRINETRA SAATHI.
+
+### Voice input
+
+- Provide a microphone control.
+- Ask for microphone permission only when the user activates voice input.
+- Show when recording is active.
+- Allow recording to stop.
+- Display recognised speech as editable text before submission when possible.
+- Allow corrections before sending.
+- Handle permission denial, unsupported browsers, and network failures gracefully.
+- Never listen continuously or in the background.
+
+### Spoken responses
+
+- Read assistant messages aloud when a suitable voice exists.
+- Use the selected language's BCP 47 language code.
+- Provide Play, Pause, Resume, and Stop controls where supported.
+- Let users disable audio.
+- Never automatically read sensitive information aloud without an explicit user action.
+- Provide the complete text response as an alternative.
+
+### Technical approach
+
+Use browser speech recognition and speech synthesis APIs with capability detection.
+
+Do not assume every device supports speech recognition or synthesis for every Indian language.
+
+If native voice support is missing, display a helpful explanation and offer text input as a fallback. Build an optional backend speech-service adapter for future use with a supported multilingual speech provider.
+
+Do not upload microphone recordings to external services without clear user awareness and consent.
+
+---
+
+# 11. SAFETY-AWARE ASSISTANT BEHAVIOUR
+
+TRINETRA SAATHI provides navigation and general information. It is not a replacement for emergency services, legal advice, counselling, or a trained human responder.
+
+If the user indicates immediate danger:
+
+- Respond calmly and briefly.
+- Prioritise immediate safety.
+- In India, display emergency number 112 and Women Helpline 181, with suitable availability caveats.
+- Encourage reaching a trusted person or suitable local support when safe.
+- Do not delay emergency guidance with excessive questions.
+- Never claim that TRINETRA has dispatched help.
+
+If the user describes domestic abuse:
+
+- Avoid blaming or judging.
+- Do not insist on confronting the alleged abuser.
+- Do not pressure the user to file a complaint.
+- Explain options and respect the user's decisions.
+- Mention safer-device considerations where appropriate.
+
+If the user describes workplace harassment:
+
+- Explain reporting options without guaranteeing legal outcomes.
+- Make clear that anonymous reporting may limit a formal investigation.
+- Avoid presenting the chatbot as a lawyer.
+
+Do not infer identity, location, or emergency status from the selected language.
+
+---
+
+# 12. REVIEWER AND ADMIN DASHBOARD
+
+Create a protected dashboard for authorised reviewers.
+
+### Summary cards
+
+- Total reports.
+- New reports awaiting review.
+- Cases under review.
+- Follow-ups due.
+- Potential recurring patterns.
+- Cases resolved.
+
+Use clearly labelled synthetic data in demo mode.
+
+### Report management
+
+Implement:
+
+- Search by case reference.
+- Filters by category, status, and date.
+- Authorised report detail views.
+- Evidence access with permission checks.
+- Restricted internal reviewer notes.
+- Case assignment.
+- Duplicate review.
+- Status updates.
+- Follow-up deadlines.
+- Audit history.
+- Pattern candidate review and dismissal.
+
+### Workflow
+
+1. Open an authorised report.
+2. Review permitted information.
+3. Examine potential duplicate or recurring-pattern flags.
+4. Request more information when a safe contact method exists.
+5. Record a review decision.
+6. Update case status.
+7. Add an audit event.
+8. Record closure or escalation according to configured procedures.
+
+Use least-privilege access. Do not grant unrestricted access to sensitive evidence by default.
+
+---
+
+# 13. DATABASE AND SECURITY
+
+Create a maintainable data model for:
+
+- User profiles and roles.
+- Reports.
+- Private contact details.
+- Case status history.
+- Evidence metadata and secure files.
+- Pattern candidates.
+- Reviewer assignments.
+- Follow-up tasks.
+- Audit events.
+- Resource directory.
+- Consent and retention metadata.
+
+Where feasible, separate private contact information from report analytics.
+
+Implement:
+
+- Client-side and server-side input validation.
+- Backend authorisation for sensitive operations.
+- Database security rules.
+- Secure file-upload restrictions.
+- Private evidence storage.
+- Rate limiting or abuse protection where supported.
+- Safe error handling.
+- A data-retention and deletion workflow.
+- Unique case references that reveal no personal details.
+- Secure password handling through the authentication provider.
+
+Do not store passwords in plaintext.
+
+Do not put confidential reports or contact information into public analytics.
+
+Do not store chat transcripts by default. If transcript storage is implemented, require clear consent and provide appropriate retention controls.
+
+Never automatically copy chatbot messages into a report. Require an explicit user action before transferring text.
+
+Clearly explain when information will be sent to an external AI provider.
+
+If the application uses demo-mode local persistence, label it clearly and do not treat it as secure production storage.
+
+---
+
+# 14. RESOURCES AND NOTIFICATIONS
+
+Build a resource directory with:
+
+- Emergency support.
+- Women's helpline information.
+- Workplace POSH guidance.
+- Relevant support organisations.
+- Safety-planning resources.
+
+Use verified information and explain the purpose of each resource.
+
+Build a notification service abstraction for future email or SMS integrations.
+
+Do not send real notifications without configured credentials, appropriate consent, and a safe delivery policy.
+
+Use simulated notifications in demo mode and label them as simulated.
+
+Do not send unsafe notifications to devices or contacts that may be monitored.
+
+---
+
+# 15. DEMO MODE FOR HACKATHON JUDGES
+
+The website must remain demonstrable even when Firebase or AI credentials are unavailable.
+
+Create synthetic records for:
+
+- A SafeReach domestic safety concern.
+- A SpeakUp workplace concern.
+- Several synthetic reports sharing a broad category, approximate area, and time window.
+- A possible duplicate report.
+- A TrustTrack case with multiple audit events.
+- A case awaiting follow-up.
+
+Clearly label every synthetic report, mock notification, and simulated integration.
+
+Provide a guided demonstration flow:
+
+1. Open the landing page.
+2. Change the interface language.
+3. Open TRINETRA SAATHI.
+4. Ask a sample safety question.
+5. Use voice input if supported.
+6. Open SafeReach and submit a synthetic sample report.
+7. Receive a generated case reference.
+8. Open the reviewer dashboard through a labelled demo role.
+9. Inspect synthetic reports.
+10. Open PatternWatch and inspect a real rule-based match between sample records.
+11. Open TrustTrack and verify the hash-linked event history.
+12. Update a sample case status.
+13. Confirm the new timeline event appears.
+
+All demo steps must work without requiring users to enter real sensitive information.
+
+Do not represent simulated police contact, legal filing, SMS delivery, AI integration, or security guarantees as real.
+
+---
+
+# 16. POLISHED UI COMPONENTS
+
+Create reusable components for:
+
+- Navigation and mobile menu.
+- TRINETRA logo.
+- Floating SAATHI chatbot.
+- Language selector.
+- Voice controls.
+- Report forms.
+- Privacy-mode selector.
+- Status badges.
+- Case timelines.
+- Analytics cards.
+- Charts.
+- Pattern explanation panels.
+- Evidence upload controls.
+- Modal confirmations.
+- Toast notifications.
+- Loading skeletons.
+- Empty states.
+- Error states.
+- Access-denied pages.
+- Emergency resource cards.
+
+Every button must perform a meaningful action.
+
+Every form must validate inputs, save through the configured service, and show understandable success or error feedback.
+
+Use loading, success, and failure states consistently.
+
+Ensure the chatbot does not obscure essential reporting controls on mobile.
+
+---
+
+# 17. IMPLEMENTATION ORDER
+
+Build in this sequence:
+
+1. Set up the project and design system.
+2. Build the logo, responsive landing page, and navigation.
+3. Build all four core feature modules.
+4. Implement reporting forms and validation.
+5. Implement authentication, role permissions, and persistence.
+6. Build the reviewer dashboard.
+7. Implement explainable PatternWatch logic.
+8. Implement TrustTrack audit events and verification.
+9. Integrate TRINETRA SAATHI chat.
+10. Implement language switching and translation dictionaries.
+11. Implement browser-native voice input and output.
+12. Add emergency resources and safety-aware assistant behaviour.
+13. Create synthetic demo data and guided demo workflow.
+14. Test the end-to-end journey and fix errors.
+15. Prepare README and deployment configuration.
+
+If time is limited, prioritise working report submission, demo persistence, PatternWatch matching, case timelines, language switching, chatbot responses, and supported browser voice features before optional integrations.
+
+Do not stop after the landing page. Complete the end-to-end demo.
+
+---
+
+# 18. FINAL TESTING CHECKLIST
+
+Before declaring completion, verify:
+
+- The project builds successfully.
+- All routes and navigation work.
+- SafeReach and SpeakUp forms validate and save.
+- Anonymous and confidential reporting options are clearly distinguished.
+- Case references and timelines work.
+- PatternWatch runs implemented matching logic.
+- TrustTrack records and verifies audit events.
+- Sensitive routes and records are protected.
+- Demo data is clearly labelled.
+- The chatbot responds meaningfully.
+- The assistant responds in the selected supported language.
+- Language preference persists across navigation.
+- Regional scripts render correctly.
+- Voice input works where supported.
+- Spoken responses work where suitable voices are available.
+- Audio can be stopped.
+- Unsupported language and browser capabilities produce clear fallbacks.
+- No API keys are exposed.
+- No fake integrations or fabricated case updates are displayed.
+- Mobile, tablet, and desktop layouts work.
+- No important buttons are decorative or non-functional without explanation.
+- The README documents configuration and limitations.
+
+---
+
+# FINAL PRODUCT VISION
+
+TRINETRA should be a distinctive, polished, accessible women’s safety platform where people can communicate in their preferred language, explore reporting options, discover potential patterns through explainable analysis, and follow authorised case updates.
+
+The four core features must work together:
+
+**SAFEREACH:** Safer domestic safety reporting.
+
+**SPEAKUP:** Workplace harassment reporting and POSH guidance.
+
+**PATTERNWATCH:** Explainable recurring-pattern detection.
+
+**TRUSTTRACK:** Case accountability and tamper-evident history.
+
+**TRINETRA SAATHI:** Multilingual AI chat and voice assistance.
+
+The core promise:
+
+“See the Signs. Protect the Silent.”
+
+Build the application now. Prioritise functionality, privacy, accessibility, excellent UI/UX, and a compelling end-to-end demonstration. Do not substitute a static mockup for working features.

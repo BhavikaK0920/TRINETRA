@@ -1,0 +1,6 @@
+{
+  "name": "TRINETRA - AI Women Safety Intelligence",
+  "description": "See the Signs. Protect the Silent. A privacy-conscious women's safety platform combining confidential reporting, workplace harassment POSH guidance, explainable AI pattern detection, tamper-evident case tracking, and multilingual voice assistance.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
